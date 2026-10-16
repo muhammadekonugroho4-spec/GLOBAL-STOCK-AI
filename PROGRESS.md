@@ -3,7 +3,7 @@
 | Fase | Status | Tanggal | Catatan |
 |------|--------|---------|---------|
 | 0 | ✅ SELESAI | 2026-10-16 | Kerangka sesuai §3, venv py3.14, `/health` 200, pytest 4/4 lulus, `.env.example` + `.gitignore` aman |
-| 1 | ⬜ Belum | - | Data pipeline (job_fetch_daily, yf→stooq fallback) |
+| 1 | ✅ SELESAI | 2026-10-16 | Pipeline: universe nasdaqtrader 13.270 simbol; yf primer + stooq fallback (challenge JS = ditandai, tidak dipaksa); parquet idempotent; workflow Actions siap. Smoke: 5/5 ticker OK (752 bar, 3 thn). pytest 13/13. Commit `6296e5e` |
 | 2-7 | ⬜ Belum | - | Lihat PROMPT_PROJECT_GLOBAL_STOCK_AI.md §5 |
 
 ## Verifikasi Fase 0
