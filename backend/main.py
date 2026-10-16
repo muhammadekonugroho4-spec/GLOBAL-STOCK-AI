@@ -1,12 +1,16 @@
-"""GLOBAL-STOCK-AI - FastAPI app (Fase 0: health + skeleton)."""
+"""GLOBAL-STOCK-AI - FastAPI app (Fase 2: screener + radar UI)."""
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
 from backend import config
+from backend.routes.api import router as api_router
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
+TEMPLATES = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 
 
 @asynccontextmanager
@@ -17,6 +21,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="GLOBAL-STOCK-AI", version=VERSION, lifespan=lifespan)
+app.include_router(api_router)
+app.mount("/static", __import__("fastapi.staticfiles", fromlist=["StaticFiles"]).StaticFiles(
+    directory=str(Path(__file__).parent / "static")), name="static")
 
 
 @app.get("/health")
@@ -37,11 +44,10 @@ def health():
 
 
 @app.get("/", response_class=HTMLResponse)
-def index():
-    return (
-        "<html><head><title>GLOBAL-STOCK-AI</title></head><body>"
-        "<h1>GLOBAL-STOCK-AI</h1>"
-        f"<p>v{VERSION} - Fase 0 skeleton berjalan.</p>"
-        '<p><a href="/health">/health</a> | <a href="/docs">/docs</a></p>'
-        "</body></html>"
-    )
+def index(request: Request):
+    return TEMPLATES.TemplateResponse(request, "screener.html")
+
+
+@app.get("/radar", response_class=HTMLResponse)
+def radar(request: Request):
+    return TEMPLATES.TemplateResponse(request, "radar.html")

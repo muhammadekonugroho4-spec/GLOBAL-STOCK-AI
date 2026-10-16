@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLOBAL-STOCK-AI - Screener</title>
+<link rel="manifest" href="/static/manifest.json">
+<style>
+:root{--bg:#0b1220;--card:#121a2e;--line:#1f2b47;--txt:#dbe4f5;--dim:#7d8db0;--up:#31c48d;--acc:#5a8dee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:16px}
+h1{font-size:19px;margin:8px 0 4px}
+.meta{color:var(--dim);font-size:13px;margin-bottom:14px}
+nav{display:flex;gap:10px;margin:10px 0 16px}
+nav a{color:var(--acc);text-decoration:none;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th{background:#0e1730;color:var(--dim);font-weight:600;text-align:right}
+th:first-child,td:first-child{text-align:left}
+.pos{color:var(--up)}
+.score{font-weight:700;color:var(--acc)}
+.empty{padding:24px;text-align:center;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>GLOBAL-STOCK-AI</h1>
+<nav><a href="/">Screener</a><a href="/radar">Radar Detektif</a><a href="/docs">API</a></nav>
+<div class="meta" id="meta">memuat...</div>
+<table id="tbl"><thead><tr>
+<th>Ticker</th><th>Skor</th><th>Close</th><th>RSI</th><th>Vol x</th><th>Chg 5h</th><th>% dari 52w</th>
+</tr></thead><tbody></tbody></table>
+</div>
+<script>
+fetch('/api/screener').then(r=>r.json()).then(d=>{
+  const m=d.manifest||{};
+  document.getElementById('meta').textContent =
+    `Data: ${d.day} | evaluasi ${m.tickers_evaluated??'-'} | lolos ${m.screen_passed??'-'} | temuan ${m.detective_findings??'-'}`;
+  const tb=document.querySelector('#tbl tbody');
+  if(!d.results.length){tb.innerHTML='<tr><td colspan="7" class="empty">Belum ada hasil. Jalankan job_screener dulu.</td></tr>';return;}
+  tb.innerHTML=d.results.map(r=>`<tr>
+    <td><b>${r.ticker}</b></td>
+    <td class="score">${r.score}</td>
+    <td>${r.close}</td>
+    <td>${r.rsi14}</td>
+    <td>${r.vol_ratio20}</td>
+    <td class="${r.chg5_pct>=0?'pos':''}">${r.chg5_pct>0?'+':''}${r.chg5_pct}%</td>
+    <td class="${r.dist_high52w_pct>=0?'pos':''}">${r.dist_high52w_pct}%</td>
+  </tr>`).join('');
+}).catch(()=>document.getElementById('meta').textContent='gagal memuat API');
+</script>
+</body>
+</html>

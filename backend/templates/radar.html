@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLOBAL-STOCK-AI - Radar</title>
+<link rel="manifest" href="/static/manifest.json">
+<style>
+:root{--bg:#0b1220;--card:#121a2e;--line:#1f2b47;--txt:#dbe4f5;--dim:#7d8db0;--warn:#f5b942;--acc:#5a8dee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:16px}
+h1{font-size:19px;margin:8px 0 4px}
+.meta{color:var(--dim);font-size:13px;margin-bottom:14px}
+nav{display:flex;gap:10px;margin:10px 0 16px}
+nav a{color:var(--acc);text-decoration:none;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:10px}
+.sig{font-size:12px;padding:2px 8px;border-radius:6px;background:#0e1730;color:var(--warn);margin-right:8px}
+.t{font-weight:700}
+.d{color:var(--dim);font-size:13px}
+.empty{padding:24px;text-align:center;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Radar Detektif</h1>
+<nav><a href="/">Screener</a><a href="/radar">Radar Detektif</a><a href="/docs">API</a></nav>
+<div class="meta" id="meta">memuat...</div>
+<div id="list"><div class="card empty">memuat...</div></div>
+</div>
+<script>
+const LABEL={unusual_volume:'VOL TAK WAJAR',breakout_52w:'BREAKOUT 52W',consistent_up:'TREN KONSISTEN'};
+fetch('/api/radar').then(r=>r.json()).then(d=>{
+  const m=d.manifest||{};
+  document.getElementById('meta').textContent=`Data: ${d.day} | ${d.findings.length} temuan`;
+  const el=document.getElementById('list');
+  if(!d.findings.length){el.innerHTML='<div class="card empty">Tidak ada temuan hari ini.</div>';return;}
+  el.innerHTML=d.findings.map(f=>`<div class="card">
+    <span class="sig">${LABEL[f.signal]||f.signal}</span>
+    <span class="t">${f.ticker}</span> <span>$${f.close}</span>
+    <div class="d">${f.detail}</div>
+  </div>`).join('');
+}).catch(()=>document.getElementById('meta').textContent='gagal memuat API');
+</script>
+</body>
+</html>

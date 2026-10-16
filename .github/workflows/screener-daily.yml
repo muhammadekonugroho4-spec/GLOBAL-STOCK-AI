@@ -1,0 +1,44 @@
+name: screener-daily
+
+on:
+  schedule:
+    - cron: "0 22 * * 1-5"   # 22:00 UTC, ~30 menit setelah fetch-daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: screener-daily
+  cancel-in-progress: false
+
+jobs:
+  screener:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run screener + detective
+        run: python -m jobs.job_screener --top 50
+
+      - name: Commit results
+        run: |
+          git config user.name "gsai-bot"
+          git config user.email "gsai-bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan hasil."
+          else
+            git commit -m "data: screener harian $(date -u +%F)"
+            git pull --rebase origin main
+            git push
+          fi
