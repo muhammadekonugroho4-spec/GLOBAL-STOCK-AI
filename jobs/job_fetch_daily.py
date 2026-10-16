@@ -44,6 +44,9 @@ def tradable_universe(uni: pd.DataFrame, limit: int, exclude_etf: bool = True) -
     if exclude_etf and "etf" in df.columns:
         df = df[~df["etf"].fillna(False)]
     df = df[df["symbol"].str.fullmatch(r"[A-Z]+")]  # buang warrant/unit/unsponsored ($, ^, dsb)
+    if "name" in df.columns:
+        bad = df["name"].str.lower().str.contains(r"warrant|unit |right(s)? |rights", regex=True, na=False)
+        df = df[~bad]
     return df["symbol"].tolist()[:limit]
 
 

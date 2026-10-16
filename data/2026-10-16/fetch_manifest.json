@@ -2,12 +2,14 @@
   "run_date": "2026-10-16",
   "universe_source": "nasdaqtrader:fresh",
   "universe_size": 13270,
-  "requested": 3,
-  "ok": 3,
+  "requested": 5,
+  "ok": 5,
   "failed": {},
   "results": {
     "A": "ok:752rows",
     "AA": "ok:752rows",
-    "AAC": "ok:35rows"
+    "AAC": "ok:35rows",
+    "AACG": "ok:752rows",
+    "AACI": "ok:140rows"
   }
 }

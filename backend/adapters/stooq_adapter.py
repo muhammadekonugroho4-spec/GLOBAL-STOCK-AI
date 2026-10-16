@@ -42,7 +42,7 @@ def parse_stooq_csv(text: str, ticker: str) -> pd.DataFrame:
 class StooqAdapter:
     source = "stooq"
 
-    def __init__(self, session: requests.Session | None = None, timeout: int = 20):
+    def __init__(self, session: requests.Session | None = None, timeout: int = 12):
         self.session = session or requests.Session()
         self.session.headers.update(UA)
         self.timeout = timeout
@@ -53,9 +53,12 @@ class StooqAdapter:
     def get_bars(self, ticker: str, start: str, end: str) -> pd.DataFrame:
         d1 = start.replace("-", "")
         d2 = end.replace("-", "")
-        r = self.session.get(
-            URL, params={"s": self._symbol(ticker), "d1": d1, "d2": d2, "i": "d"}, timeout=self.timeout
-        )
+        try:
+            r = self.session.get(
+                URL, params={"s": self._symbol(ticker), "d1": d1, "d2": d2, "i": "d"}, timeout=self.timeout
+            )
+        except requests.RequestException as exc:
+            raise DataSourceError(f"{ticker}: stooq request gagal ({type(exc).__name__})") from exc
         if r.status_code != 200:
             raise DataSourceError(f"{ticker}: stooq HTTP {r.status_code}")
         return parse_stooq_csv(r.text, ticker)

@@ -138,9 +138,18 @@ def test_job_tradable_filters_weird_symbols():
 
     uni = pd.DataFrame(
         {
-            "symbol": ["AAPL", "BRK/B", "FOO$", "AB^", "GOOD", "ETF1"],
-            "name": ["x"] * 6,
-            "etf": [False, False, False, False, False, True],
+            "symbol": ["AAPL", "BRK/B", "FOO$", "AB^", "GOOD", "ETF1", "AACIW", "XYZW"],
+            "name": [
+                "x",
+                "x",
+                "x",
+                "x",
+                "x",
+                "x",
+                "AAC Innovation Warrant",
+                "Warrant shares of something",
+            ],
+            "etf": [False] * 8,
         }
     )
     out = tradable_universe(uni, 10)
