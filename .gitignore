@@ -1,0 +1,18 @@
+# secrets - jangan pernah di-commit
+.env
+*.key
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# data cache besar (yang di-commit hanya output pipeline)
+data/cache/
+
+# log
+*.log
+
+# konfigurasi lokal
+r2_config.json
