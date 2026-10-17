@@ -41,3 +41,21 @@ def api_radar(day: str | None = None):
     mf = config.DATA_DIR / d / "screener_manifest.json"
     manifest = json.loads(mf.read_text()) if mf.exists() else {}
     return {"day": d, "manifest": manifest, "findings": rows}
+
+
+@router.get("/ai")
+def api_ai(day: str | None = None):
+    d = day or _latest_day() or date.today().isoformat()
+    p = config.DATA_DIR / d / "ai_analysis.csv"
+    mf = config.DATA_DIR / d / "ai_manifest.json"
+    manifest = json.loads(mf.read_text()) if mf.exists() else {}
+    rows: list[dict] = []
+    if p.exists():
+        df = pd.read_csv(p)
+        for col in ("reasons", "risks"):
+            if col in df.columns:
+                df[col] = (
+                    df[col].fillna("").astype(str).str.split(r" \| ")  # separator eksplisit, bukan tiap karakter
+                )
+        rows = df.where(pd.notna(df), None).to_dict(orient="records")
+    return {"day": d, "manifest": manifest, "analyses": rows}

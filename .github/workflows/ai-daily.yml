@@ -1,0 +1,47 @@
+name: ai-daily
+
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"   # 22:30 UTC, setelah screener-daily selesai
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-daily
+  cancel-in-progress: false
+
+jobs:
+  ai:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run AI analysis (mock bila key kosong)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python -m jobs.job_ai_analysis --top 10
+
+      - name: Commit results
+        run: |
+          git config user.name "gsai-bot"
+          git config user.email "gsai-bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan hasil."
+          else
+            git commit -m "data: analisa AI harian $(date -u +%F)"
+            git pull --rebase origin main
+            git push
+          fi

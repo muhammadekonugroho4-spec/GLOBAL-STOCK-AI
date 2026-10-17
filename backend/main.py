@@ -51,3 +51,8 @@ def index(request: Request):
 @app.get("/radar", response_class=HTMLResponse)
 def radar(request: Request):
     return TEMPLATES.TemplateResponse(request, "radar.html")
+
+
+@app.get("/ai", response_class=HTMLResponse)
+def ai_page(request: Request):
+    return TEMPLATES.TemplateResponse(request, "ai.html")

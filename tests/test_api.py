@@ -67,3 +67,22 @@ def test_ui_radar_page():
 
 def test_health_still_ok():
     assert client.get("/health").json()["status"] == "ok"
+
+
+def test_api_ai(data_day):
+    (data_day / "2026-10-16" / "ai_analysis.csv").write_text(
+        "ticker,score,verdict,summary,reasons,risks,engine,generated_at\n"
+        'AAA,77.0,bullish,"bagus","r1 | r2","x",mock,2026-10-16T10:00:00\n'
+    )
+    (data_day / "2026-10-16" / "ai_manifest.json").write_text('{"engines":{"mock":1}}')
+    r = client.get("/api/ai")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["analyses"][0]["ticker"] == "AAA"
+    assert body["analyses"][0]["reasons"] == ["r1", "r2"]  # sudah di-split
+
+
+def test_ui_ai_page():
+    r = client.get("/ai")
+    assert r.status_code == 200
+    assert "Analisa AI" in r.text

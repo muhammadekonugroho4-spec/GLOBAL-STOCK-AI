@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLOBAL-STOCK-AI - Analisa AI</title>
+<link rel="manifest" href="/static/manifest.json">
+<style>
+:root{--bg:#0b1220;--card:#121a2e;--line:#1f2b47;--txt:#dbe4f5;--dim:#7d8db0;--up:#31c48d;--down:#f05252;--acc:#5a8dee;--warn:#f5b942}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:16px}
+h1{font-size:19px;margin:8px 0 4px}
+.meta{color:var(--dim);font-size:13px;margin-bottom:14px}
+nav{display:flex;gap:10px;margin:10px 0 16px;flex-wrap:wrap}
+nav a{color:var(--acc);text-decoration:none;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:12px}
+.hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.t{font-weight:700;font-size:16px}
+.sc{color:var(--acc);font-weight:700}
+.v{font-size:12px;padding:2px 8px;border-radius:6px}
+.bullish{background:#0e2e22;color:var(--up)}
+.bearish{background:#331a1a;color:var(--down)}
+.neutral{background:#33290f;color:var(--warn)}
+.eng{color:var(--dim);font-size:12px;margin-left:auto}
+.su{margin:6px 0}
+ul{margin:4px 0 4px 18px;color:var(--dim);font-size:13px}
+.pos{color:var(--up)}
+.empty{padding:24px;text-align:center;color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Analisa AI</h1>
+<nav><a href="/">Screener</a><a href="/radar">Radar</a><a href="/ai">AI</a><a href="/docs">API</a></nav>
+<div class="meta" id="meta">memuat...</div>
+<div id="list"></div>
+</div>
+<script>
+fetch('/api/ai').then(r=>r.json()).then(d=>{
+  const m=d.manifest||{};
+  document.getElementById('meta').textContent =
+    `Data: ${d.day} | ${d.analyses.length} ticker dianalisa | engine: ${Object.keys(m.engines||{}).join(', ')||'-'}`;
+  const el=document.getElementById('list');
+  if(!d.analyses.length){el.innerHTML='<div class="card empty">Belum ada analisa. Jalankan job_ai_analysis dulu.</div>';return;}
+  el.innerHTML=d.analyses.map(a=>`<div class="card">
+    <div class="hd">
+      <span class="t">${a.ticker}</span>
+      <span class="sc">${a.score}</span>
+      <span class="v ${a.verdict}">${a.verdict.toUpperCase()}</span>
+      <span class="eng">engine: ${a.engine}</span>
+    </div>
+    <div class="su">${a.summary}</div>
+    <ul>${(a.reasons||[]).map(r=>`<li>${r}</li>`).join('')}</ul>
+    ${(a.risks||[]).length?`<ul style="color:#c98">${a.risks.map(r=>`<li>${r}</li>`).join('')}</ul>`:''}
+  </div>`).join('');
+}).catch(()=>document.getElementById('meta').textContent='gagal memuat API');
+</script>
+</body>
+</html>
