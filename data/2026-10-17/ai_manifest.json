@@ -1,9 +1,9 @@
 {
   "run_date": "2026-10-17",
   "source_screener": "2026-10-16",
-  "analyzed": 5,
+  "analyzed": 10,
   "engines": {
-    "mock": 5
+    "mock": 10
   },
   "market_headlines": [
     "Influencers and biohackers swear by fasting. Here’s what the science says.",
