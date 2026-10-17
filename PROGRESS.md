@@ -19,3 +19,8 @@ cd /home/kaltaraid/Documents/GLOBAL-STOCK-AI
 .venv/bin/python -m uvicorn backend.main:app --reload --port 8100
 # buka http://127.0.0.1:8100/health
 ```
+
+## Infrastruktur credential (17 Okt 2026)
+- GSAI: helper repo-local `.git/config` → `~/.gsai-credentials` (token gho_, chmod 400) — TIDAK dipakai proyek lain
+- WEB-SCREENING: store global `~/.git-credentials` (PAT lama) — cron aman, tidak menyentuh file GSAI
+- LLM key (GEMINI/GROQ): sengaja kosong, diisi saat Fase 3
