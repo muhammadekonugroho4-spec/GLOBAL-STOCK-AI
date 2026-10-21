@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-10-21",
+  "source_screener": "2026-10-21",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Bull markets tend to peak with a whimper, not a bang — but a 15% correction for the S&P 500 may be next",
+    "Super Micro’s stock soars after surprise update — with Dell and HPE shares joining the rally",
+    "Tesla’s stock rises as Elon Musk drops new clues about a possible SpaceX merger",
+    "Netflix vows to revive viewership trends, but investors hit ‘sell’ on the stock",
+    "Why SpaceX’s stock is surging — and lifting the broader AI universe along with it"
+  ]
+}
