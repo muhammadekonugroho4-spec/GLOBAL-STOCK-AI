@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-10-22",
+  "source_screener": "2026-10-22",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Tesla’s stock falls as Elon Musk leaves investors wanting more",
+    "Meta’s stock rises as investors glimpse an opportunity that could dwarf the ad business",
+    "Why investors should be skeptical of a potential Tesla-SpaceX merger",
+    "Trump says data centers should generate their own electricity — but experts say only states can mandate that",
+    "Oil is now flowing out of the Persian Gulf like before the Iran war. Why prices may still not come down anytime soon."
+  ]
+}
