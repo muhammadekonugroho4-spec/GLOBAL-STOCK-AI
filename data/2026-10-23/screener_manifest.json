@@ -1,0 +1,11 @@
+{
+  "run_date": "2026-10-23",
+  "tickers_evaluated": 585,
+  "screen_passed": 21,
+  "detective_findings": 49,
+  "findings_by_signal": {
+    "breakout_52w": 21,
+    "unusual_volume": 20,
+    "consistent_up": 8
+  }
+}
