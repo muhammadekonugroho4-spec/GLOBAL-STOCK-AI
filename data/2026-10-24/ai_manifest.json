@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-10-24",
+  "source_screener": "2026-10-24",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "‘I don’t feel sorry for myself’: I’m 64 and will be renting for the rest of my life. Is that so bad?",
+    "Will Anthropic pull off a November IPO? Time is running out to file key paperwork.",
+    "Investors piled a record sum into a leveraged semiconductor ETF last week. Things didn’t work out.",
+    "This hot AI-fueled stock has been in a rut. It just beat earnings expectations by 36%.",
+    "The mobile ambitions of SpaceX are hitting telecom stocks again. Here’s what the latest developments mean."
+  ]
+}
