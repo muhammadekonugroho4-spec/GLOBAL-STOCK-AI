@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-10-30",
+  "source_screener": "2026-10-30",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Amazon’s stock drops — even in the face of a bold new cloud forecast",
+    "A Starbucks turnaround is brewing — but perhaps not quickly enough for investors",
+    "Sandisk sees revenue nearly quintuple — and a stock split is on the way",
+    "Our church has a $1.5 million bequest earning 3.75% in a bank account. Is inflation eroding it?",
+    "Why Intel’s stock is sinking toward its worst drop in two years"
+  ]
+}
