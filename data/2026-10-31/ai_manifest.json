@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-10-31",
+  "source_screener": "2026-10-31",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Has the tech bubble burst? Why the Nasdaq’s rough ride looks eerily like 2000.",
+    "This cybersecurity stock will be the next to join the S&P 500",
+    "Why gold plunged to its lowest price in a year despite renewed Iran jitters",
+    "Warsh wants the Fed to say less. Two officials are pushing for more transparency.",
+    "In a wild October for markets, these stocks were the biggest winners and losers"
+  ]
+}
