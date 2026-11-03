@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-03",
+  "source_screener": "2026-11-03",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Here’s why Palantir’s stock is down despite a ‘bombastic’ quarter",
+    "Apple’s iPhone business is booming. Here’s why the stock is falling anyway.",
+    "Nasdaq-100 tumbles into its third correction this year as AI worries mount",
+    "Marvell and Lumentum shareholders unite in panning merger deal: ‘It’s a trash offer’",
+    "Traders rushing into a leveraged ETF to make a bullish bet on the Nasdaq-100 just got burned"
+  ]
+}
