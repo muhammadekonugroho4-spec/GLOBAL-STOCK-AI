@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-04",
+  "source_screener": "2026-11-04",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Here’s why AMD’s stock is rising — and sending a confident message about the AI trade",
+    "Super Micro’s stock pops as earnings show booming demand for AI servers",
+    "What analysts are telling us while Apple’s stock falls after earnings report",
+    "Shopify’s stock slides after earnings. This is what’s worrying Wall Street.",
+    "AI’s control over the bond market is growing — even rivaling war and elections"
+  ]
+}
