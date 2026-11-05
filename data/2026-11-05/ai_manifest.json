@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-05",
+  "source_screener": "2026-11-05",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Qualcomm’s stock falls as twin forces pressure sales",
+    "This year’s worst-performing S&P 500 stock is finally seeing some major relief",
+    "Figma’s stock dips as investors worry that AI momentum is coming at a high price",
+    "McDonald’s tests new value menu as fast-food discount wars heat up",
+    "As Vistra and other energy stocks slide, some analysts warn of an ‘excessive knee-jerk’ reaction"
+  ]
+}
