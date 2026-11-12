@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-12",
+  "source_screener": "2026-11-12",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Nvidia’s stock drops as the board reportedly prepares to remove CEO Jensen Huang",
+    "‘I’m sick of flying’: I paid for priority boarding, but the overhead bins were full. Was I duped?",
+    "I’m 63 and spending $95,000 on a roof deck for my $500,000 home. Am I being extravagant?",
+    "Nasdaq futures fall as Nvidia sinks 8% after hours on report board may oust Huang",
+    "Your holiday credit-card bills are going up. What you can do to ease the pain."
+  ]
+}
