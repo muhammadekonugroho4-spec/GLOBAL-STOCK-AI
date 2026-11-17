@@ -1,0 +1,48 @@
+ticker,signal,value,detail,close,date
+ASUR,breakout_52w,2.1,close menyentuh/melampaui high 52 minggu,10.72,2026-11-16
+ADP,breakout_52w,0.49,close menyentuh/melampaui high 52 minggu,313.43,2026-11-16
+ACVA,breakout_52w,0.0,close menyentuh/melampaui high 52 minggu,10.5,2026-10-15
+AESP,breakout_52w,0.0,close menyentuh/melampaui high 52 minggu,10.06,2026-11-16
+APXT,breakout_52w,0.0,close menyentuh/melampaui high 52 minggu,10.21,2026-11-16
+ATLQU,breakout_52w,0.0,close menyentuh/melampaui high 52 minggu,10.2,2026-11-16
+ATKR,breakout_52w,-0.01,close menyentuh/melampaui high 52 minggu,94.92,2026-10-15
+ACA,breakout_52w,-0.03,close menyentuh/melampaui high 52 minggu,149.15,2026-10-22
+AACP,breakout_52w,-0.1,close menyentuh/melampaui high 52 minggu,10.11,2026-11-16
+ALOV,breakout_52w,-0.1,close menyentuh/melampaui high 52 minggu,10.05,2026-11-16
+ALPX,breakout_52w,-0.1,close menyentuh/melampaui high 52 minggu,10.0,2026-11-16
+ATLQ,breakout_52w,-0.1,close menyentuh/melampaui high 52 minggu,10.03,2026-11-16
+ACGL,consistent_up,5.0,naik 5 hari beruntun,110.89,2026-11-16
+ADP,consistent_up,5.0,naik 5 hari beruntun,313.43,2026-11-16
+ALL,consistent_up,5.0,naik 5 hari beruntun,270.43,2026-11-16
+AMPY,consistent_up,5.0,naik 5 hari beruntun,4.03,2026-11-16
+ANGX,consistent_up,5.0,naik 5 hari beruntun,4.49,2026-11-16
+AMST,unusual_volume,493.19,volume 493.2x rata-rata 20 hari,0.547,2026-11-16
+AKAN,unusual_volume,268.45,volume 268.5x rata-rata 20 hari,2.21,2026-11-16
+AQB,unusual_volume,40.35,volume 40.3x rata-rata 20 hari,0.802,2026-11-16
+ALOV,unusual_volume,18.54,volume 18.5x rata-rata 20 hari,10.05,2026-11-16
+AFJK,unusual_volume,14.43,volume 14.4x rata-rata 20 hari,12.11,2026-11-16
+AEI,unusual_volume,13.18,volume 13.2x rata-rata 20 hari,0.508,2026-11-16
+ALPXU,unusual_volume,9.95,volume 10.0x rata-rata 20 hari,10.18,2026-11-16
+APXTU,unusual_volume,7.18,volume 7.2x rata-rata 20 hari,10.274,2026-11-16
+AMACU,unusual_volume,6.67,volume 6.7x rata-rata 20 hari,10.1,2026-11-16
+AIRS,unusual_volume,6.43,volume 6.4x rata-rata 20 hari,0.7,2026-11-16
+AIMD,unusual_volume,5.67,volume 5.7x rata-rata 20 hari,1.14,2026-11-16
+AMSS,unusual_volume,5.44,volume 5.4x rata-rata 20 hari,0.22,2026-11-16
+AMBO,unusual_volume,4.59,volume 4.6x rata-rata 20 hari,1.365,2026-11-16
+ALTI,unusual_volume,4.27,volume 4.3x rata-rata 20 hari,1.54,2026-11-16
+ACAAU,unusual_volume,4.0,volume 4.0x rata-rata 20 hari,10.05,2026-11-16
+ADAG,unusual_volume,3.92,volume 3.9x rata-rata 20 hari,1.6,2026-11-16
+ATLCL,unusual_volume,3.91,volume 3.9x rata-rata 20 hari,24.93,2026-11-16
+ADAML,unusual_volume,3.83,volume 3.8x rata-rata 20 hari,20.89,2026-11-16
+ACRS,unusual_volume,3.76,volume 3.8x rata-rata 20 hari,3.605,2026-11-16
+AENT,unusual_volume,3.46,volume 3.5x rata-rata 20 hari,5.23,2026-11-16
+APT,unusual_volume,3.46,volume 3.5x rata-rata 20 hari,6.43,2026-11-16
+ADIG,unusual_volume,3.25,volume 3.2x rata-rata 20 hari,9.3,2026-11-16
+AOUT,unusual_volume,3.22,volume 3.2x rata-rata 20 hari,18.73,2026-11-16
+AERT,unusual_volume,3.18,volume 3.2x rata-rata 20 hari,4.4,2026-11-16
+AUC,unusual_volume,3.17,volume 3.2x rata-rata 20 hari,8.54,2026-11-16
+AGIG,unusual_volume,2.86,volume 2.9x rata-rata 20 hari,0.63,2026-11-16
+AKA,unusual_volume,2.82,volume 2.8x rata-rata 20 hari,8.286,2026-11-16
+APC,unusual_volume,2.78,volume 2.8x rata-rata 20 hari,14.43,2026-11-16
+AVAT,unusual_volume,2.77,volume 2.8x rata-rata 20 hari,1.05,2026-11-16
+ARTC,unusual_volume,2.64,volume 2.6x rata-rata 20 hari,10.026,2026-11-16
