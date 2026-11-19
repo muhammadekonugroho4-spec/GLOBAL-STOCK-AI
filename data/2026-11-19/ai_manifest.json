@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-19",
+  "source_screener": "2026-11-19",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
+    "Palo Alto Networks’ stock gets a fresh AI-fueled boost from earnings",
+    "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
+    "What the ‘death cross’ in small-cap stocks means for the rest of the market",
+    "How copper’s plunge could hurt the AI buildout"
+  ]
+}
