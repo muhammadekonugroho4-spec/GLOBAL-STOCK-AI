@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-20",
+  "source_screener": "2026-11-20",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and buy real estate — or ride out the storm?",
+    "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?",
+    "My wife is bankrolling her family’s trips to New York and it’s draining our savings. Should I ask her to stop?",
+    "After Anthropic’s ‘bittersweet’ IPO, here’s what lies ahead",
+    "These were the only stocks that rose amid the stock market’s wipeout Thursday"
+  ]
+}
