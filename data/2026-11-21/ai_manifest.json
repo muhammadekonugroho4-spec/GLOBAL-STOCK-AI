@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-21",
+  "source_screener": "2026-11-21",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "Dow, S&P 500 enter correction as Nasdaq suffers worst week since 2020",
+    "Chip stocks see $2.3 trillion weekly wipeout as panic grips the AI trade",
+    "These stocks were crushed the most this week as the tech wreck accelerated",
+    "Nvidia’s stock clinches a stretch of weekly losses not seen since 2008",
+    "Everyone’s making money off ‘GTA 6’ this week — except investors in Take-Two’s stock"
+  ]
+}
