@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-11-27",
+  "source_screener": "2026-11-27",
+  "analyzed": 10,
+  "engines": {
+    "mock": 10
+  },
+  "market_headlines": [
+    "I hate that Jensen Huang is back at Nvidia, but I love what it’s done for my 401(k). Am I a hypocrite?",
+    "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
+    "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
+    "‘I’ve been a stay-at-home mom’: I’m 50 and have a chronic illness. My husband lost his job. Should he raid his 401(k)?",
+    "I’m terrified of a market crash. Should I put $400,000 of my $1 million retirement savings into an annuity?"
+  ]
+}
